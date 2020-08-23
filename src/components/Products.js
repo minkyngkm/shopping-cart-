@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Products({ products }) {
+export default function Products({ products, addToCart }) {
     const productItems = products.map(product => (
 
             <div className="single-product" key={product.id}>
@@ -9,7 +9,7 @@ export default function Products({ products }) {
                 </div>
                 <p>{product.title} </p>
                 <p> ${product.price}</p>
-                <button> ADD TO CART</button>
+                <button onClick={() => addToCart(product)}> ADD TO CART</button>
             </div>
     ))
     return (
