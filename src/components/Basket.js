@@ -10,14 +10,14 @@ export default function Basket({cart, removeFromCart}) {
                 you have {cart.length} items in the cart
                 <div>
                     {cart.map( item =>  (
-                    <>
-                    <ul key={item.id} className="cart-table">
+                    <React.Fragment  key={item.id} >
+                    <ul className="cart-table">
                         <li> <img src={`/products/${item.sku}_2.jpg`} /></li>
                         <li>{item.title}</li>
                         <li>${item.price}</li>
                         <li> <button onClick={() => removeFromCart(item)}> remove </button></li>
                     </ul>
-                    </> ))}
+                    </React.Fragment> ))}
         
                 </div>
             </div> ) } 
